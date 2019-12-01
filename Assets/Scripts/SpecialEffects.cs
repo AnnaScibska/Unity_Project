@@ -10,7 +10,7 @@ public class SpecialEffects : MonoBehaviour {
     public static SpecialEffects Instance;
 
     public ParticleSystem smokeEffect;
-    //public ParticleSystem fireEffect;
+    public ParticleSystem fireEffect;
 
     void Awake()
     {
@@ -29,15 +29,13 @@ public class SpecialEffects : MonoBehaviour {
     /// <param name="position"></param>
     public void Explosion(Vector3 position)
     {
-        // Smoke on the water
+        // Smoke 
         //Debug.LogError("Error!!!!");
         //Debug.LogError(smokeEffect);
         Instantiate(smokeEffect, position);
 
-        // Tu tu tu, tu tu tudu
-
-        // Fire in the sky
-        //instantiate(fireEffect, position);
+        // Fire 
+        Instantiate(fireEffect, position);
     }
 
     /// <summary>
@@ -45,7 +43,7 @@ public class SpecialEffects : MonoBehaviour {
     /// </summary>
     /// <param name="prefab"></param>
     /// <returns></returns>
-    private void Instantiate(ParticleSystem prefab, Vector3 position)
+    private ParticleSystem Instantiate(ParticleSystem prefab, Vector3 position)
     {
         ParticleSystem newParticleSystem = Instantiate(
           prefab,
@@ -54,11 +52,11 @@ public class SpecialEffects : MonoBehaviour {
         ) as ParticleSystem;
 
         // Make sure it will be destroyed
-        //Destroy(
-        //  newParticleSystem.gameObject,
-        //  newParticleSystem.startLifetime
-        //);
+        Destroy(
+          newParticleSystem.gameObject,
+          newParticleSystem.startLifetime
+        );
 
-        // return newParticleSystem;
+        return newParticleSystem;
     }
 }
