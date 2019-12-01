@@ -40,8 +40,13 @@ public class HealthScript : MonoBehaviour
 
         if (hp <= 0)
         {
+            
+
             // Dead!
             Destroy(gameObject);
+
+            // Explosion (smoke effect)
+            SpecialEffects.Instance.Explosion(transform.position);
 
             if (isEnemy == true)
             {

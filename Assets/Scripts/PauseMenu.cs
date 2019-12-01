@@ -61,7 +61,7 @@ public class PauseMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("Stage1");
         Button[] buttons = PauseMenu.FindObjectsOfType<Button>();
-        // turning on "Resume button" in the menu after death of the hero
+        // turning off "Resume button" in the menu after death of the hero
         buttons[1].interactable = true;
     }
 
