@@ -21,6 +21,20 @@ public class HighscoreTable : MonoBehaviour {
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
+        if (highscores == null)
+        {
+            // There's no stored table, initialize
+            Debug.Log("Initializing table with default values...");
+            AddHighscoreEntry(1000, "ANNA");
+            AddHighscoreEntry(999, "NICO");
+            AddHighscoreEntry(0, "O");
+            AddHighscoreEntry(0, "O");
+            AddHighscoreEntry(0, "O");
+            // Reload
+            jsonString = PlayerPrefs.GetString("highscoreTable");
+            highscores = JsonUtility.FromJson<Highscores>(jsonString);
+        }
+
         // Sort entry list by Score
         for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
         {
