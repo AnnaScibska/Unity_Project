@@ -12367,8 +12367,8 @@ GameObject:
   - component: {fileID: 863648976}
   - component: {fileID: 863648978}
   - component: {fileID: 863648977}
-  - component: {fileID: 863648979}
   - component: {fileID: 863648980}
+  - component: {fileID: 863648979}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
