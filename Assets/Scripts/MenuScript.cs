@@ -11,8 +11,21 @@ public class MenuScript : MonoBehaviour {
         SceneManager.LoadScene("Stage1");
     }
 
+    public void Highscore()
+    {
+        // Display highscores
+        SceneManager.LoadScene("Hightscores");
+    }
+
+    public void MainMenu()
+    {
+        // "Display Main Menu
+        SceneManager.LoadScene("Menu");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
     }
+
 }

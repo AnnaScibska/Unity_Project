@@ -15,7 +15,7 @@ public class HealthScript : MonoBehaviour {
     public Slider HealthBar;
 
     public Image DamageImg;
-    public float flashSpeed = 5f;
+    public float flashSpeed = 20f;
     public Color flashColour = new Color (1f, 0f, 0f, 0.9f);
     bool damaged;
 
