@@ -21,4 +21,9 @@ public class ManageScore : MonoBehaviour {
         text.text = "SCORE: " + score;
     }
 
+    public static int GetScore()
+    {
+        return score;
+    }
+
 }
