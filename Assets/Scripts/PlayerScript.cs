@@ -99,9 +99,14 @@ public class PlayerScript : MonoBehaviour {
     // on hero's death
     void OnDestroy()
     {
+        // Display the menu
         Canvas.FindObjectOfType<PauseMenu>().pauseMenuUI.SetActive(true);
         Button[] buttons = PauseMenu.FindObjectsOfType<Button>();
         // turning off "Resume button" in the menu after death of the hero
         buttons[1].interactable = false;
+        // Put score on score board
+        int score = ManageScore.GetScore();
+        HighscoreTable highscoreTable = new HighscoreTable();
+        highscoreTable.AddHighscoreEntry(score, "TEST");
     }
 }
