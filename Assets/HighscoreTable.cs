@@ -129,7 +129,7 @@ public class HighscoreTable : MonoBehaviour {
     }
 
     // Add Highscore entry
-    public void AddHighscoreEntry(int score, string name)
+    public static void AddHighscoreEntry(int score, string name)
     {
         // Create HighscoreEntry
         HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name };

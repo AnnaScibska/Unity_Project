@@ -106,8 +106,7 @@ public class PlayerScript : MonoBehaviour {
         buttons[1].interactable = false;
         // Put score on score board
         int score = ManageScore.GetScore();
-        HighscoreTable highscoreTable = new HighscoreTable();
-        highscoreTable.AddHighscoreEntry(score, "TEST");
+        HighscoreTable.AddHighscoreEntry(score, "TEST");
 
         Canvas.FindObjectOfType<PauseMenu>().gameover.SetActive(true);
     }
