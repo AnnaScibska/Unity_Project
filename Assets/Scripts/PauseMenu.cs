@@ -8,11 +8,13 @@ public class PauseMenu : MonoBehaviour {
 
     public static bool IsGamePaused = false;
     public GameObject pauseMenuUI;
+    public GameObject gameover;
 
     // turnig of the menu at the beginnig of the game
     void Awake()
     {
         pauseMenuUI.SetActive(false);
+        gameover.SetActive(false);
         Time.timeScale = 1f;
         IsGamePaused = false;
     }
@@ -61,8 +63,9 @@ public class PauseMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("Stage1");
         Button[] buttons = PauseMenu.FindObjectsOfType<Button>();
-        // turning off "Resume button" in the menu after death of the hero
+        // turning ON "Resume button" in the menu after death of the hero
         buttons[1].interactable = true;
+        gameover.SetActive(false);
     }
 
     // exit the game

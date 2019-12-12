@@ -108,5 +108,7 @@ public class PlayerScript : MonoBehaviour {
         int score = ManageScore.GetScore();
         HighscoreTable highscoreTable = new HighscoreTable();
         highscoreTable.AddHighscoreEntry(score, "TEST");
+
+        Canvas.FindObjectOfType<PauseMenu>().gameover.SetActive(true);
     }
 }
