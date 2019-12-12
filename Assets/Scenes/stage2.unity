@@ -1493,6 +1493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 766341395}
+  gameover: {fileID: 1022872765}
 --- !u!1001 &114655866
 Prefab:
   m_ObjectHideFlags: 0

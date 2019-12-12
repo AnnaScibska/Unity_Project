@@ -102,12 +102,20 @@ public class PlayerScript : MonoBehaviour {
         // Display the menu
         Canvas.FindObjectOfType<PauseMenu>().pauseMenuUI.SetActive(true);
         Button[] buttons = PauseMenu.FindObjectsOfType<Button>();
+
+        // Display GAMEOVER
+        Canvas.FindObjectOfType<PauseMenu>().gameover.SetActive(true);
+
         // turning off "Resume button" in the menu after death of the hero
         buttons[1].interactable = false;
+
         // Put score on score board
         int score = ManageScore.GetScore();
-        HighscoreTable.AddHighscoreEntry(score, "TEST");
-
-        Canvas.FindObjectOfType<PauseMenu>().gameover.SetActive(true);
+        string playerName = PlayerPrefs.GetString("playerName");
+        if (playerName == null)
+        {
+            playerName = "PLAYER";
+        }
+        HighscoreTable.AddHighscoreEntry(score, playerName);
     }
 }
