@@ -82,7 +82,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.83, y: 11.03}
+    oldSize: {x: 7.5, y: 4.69}
     newSize: {x: 13.83, y: 11.03}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -104,10 +104,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   hp: 10
+  immunity: 0
   HealthBar: {fileID: 0}
   DamageImg: {fileID: 0}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.9}
+  ImmunityImg: {fileID: 0}
+  immunityColour: {r: 1, g: 1, b: 1, a: 0.6627451}
   isEnemy: 0
 --- !u!114 &114180959411952488
 MonoBehaviour:

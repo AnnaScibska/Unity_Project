@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   add: 1
-  type: shootingRate
+  type: immunity
 --- !u!212 &212984575991899414
 SpriteRenderer:
   m_ObjectHideFlags: 1

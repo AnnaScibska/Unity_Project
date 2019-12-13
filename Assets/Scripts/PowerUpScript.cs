@@ -22,9 +22,9 @@ public class PowerUpScript : MonoBehaviour {
                     // updating the Hero's HealthBar
                     Canvas.FindObjectOfType<Slider>().value = life.hp;
                     break;
-                case "shootingRate":
-                    WeaponScript weapon = hero.gameObject.GetComponent<WeaponScript>();
-                    weapon.shootingRate *= (float) 0.8;
+                case "immunity":
+                    HealthScript immunity = hero.gameObject.GetComponent<HealthScript>();
+                    immunity.GetImmunity();
                     Destroy(gameObject);
                     break;
             }            

@@ -11,12 +11,15 @@ public class HealthScript : MonoBehaviour {
     /// 
     public int maxHealth = 1;
     public int hp = 1;
+    public bool immunity = false;
 
     public Slider HealthBar;
 
     public Image DamageImg;
     public float flashSpeed = 20f;
     public Color flashColour = new Color (1f, 0f, 0f, 0.9f);
+    public Image ImmunityImg;
+    public Color immunityColour = new Color(1f, 1f, 1f, 0.8f);
     bool damaged;
 
     /// <summary>
@@ -33,7 +36,11 @@ public class HealthScript : MonoBehaviour {
     /// </summary>
     /// <param name="damageCount"></param>
     public void Damage (int damageCount) {
-        hp -= damageCount;
+
+        if (! immunity || isEnemy)
+        {
+            hp -= damageCount;
+        }
 
         if (hp <= 0) {
             
@@ -66,6 +73,44 @@ public class HealthScript : MonoBehaviour {
             }
         }
     }
+
+    public void GetImmunity()
+    {
+        immunity = true;
+        StartCoroutine(Wait5Seconds());
+        StartCoroutine(BlinkBackground());
+    }
+
+    IEnumerator Wait5Seconds()
+    {
+        yield return new WaitForSecondsRealtime(5);
+        immunity = false;
+        ImmunityImg.color = Color.clear;
+    }
+
+    IEnumerator BlinkBackground()
+    {
+        bool isBackgroundDisplayed = false;
+        while (immunity)
+        {
+            isBackgroundDisplayed = !isBackgroundDisplayed;
+            ChangeBackground(isBackgroundDisplayed);
+            yield return new WaitForSecondsRealtime(0.05f);
+        }
+    }
+
+    private void ChangeBackground(bool isBackgroundDisplayed)
+    {
+        if (isBackgroundDisplayed)
+        {
+            ImmunityImg.color = immunityColour;
+        } else
+        {
+            ImmunityImg.color = Color.clear;
+        }
+    }
+
+
 
     void OnTriggerEnter2D (Collider2D otherCollider) {
         // Is this a shot?
