@@ -19,7 +19,7 @@ public class HealthScript : MonoBehaviour {
     public float flashSpeed = 20f;
     public Color flashColour = new Color (1f, 0f, 0f, 0.9f);
     public Image ImmunityImg;
-    public Color immunityColour = new Color(1f, 1f, 1f, 0.8f);
+    public Color immunityColour = new Color(1f, 1f, 1f, 0.6f);
     bool damaged;
 
     /// <summary>

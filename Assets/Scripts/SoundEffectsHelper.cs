@@ -6,9 +6,6 @@ using UnityEngine;
 /// </summary>
 public class SoundEffectsHelper : MonoBehaviour {
 
-	/// <summary>
-	/// Singleton
-	/// </summary>
 	public static SoundEffectsHelper Instance;
 
 	public AudioClip explosionSound;
@@ -40,7 +37,6 @@ public class SoundEffectsHelper : MonoBehaviour {
 	/// </summary>
 	/// <param name="originalClip"></param>
 	private void MakeSound (AudioClip originalClip) {
-		// As it is not 3D audio clip, position doesn't matter.
-		AudioSource.PlayClipAtPoint (originalClip, transform.position);
+		AudioSource.PlayClipAtPoint (originalClip, new Vector2(50, 0));
 	}
 }
