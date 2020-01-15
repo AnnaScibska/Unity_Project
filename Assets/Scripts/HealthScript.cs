@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthScript : MonoBehaviour {
 
     /// <summary>
-    /// Total hitpoints
+    /// Total hitpoints and health
     /// </summary>
     /// 
     public int maxHealth = 1;
@@ -64,6 +64,7 @@ public class HealthScript : MonoBehaviour {
         }
     }
 
+    // Restore hero's health
     public void Restore (int healCount) {
         if (hp < maxHealth) {
             if (hp + healCount < maxHealth) {
@@ -74,6 +75,7 @@ public class HealthScript : MonoBehaviour {
         }
     }
 
+    // Get Immunity for 5 seconds
     public void GetImmunity()
     {
         immunity = true;
@@ -81,6 +83,7 @@ public class HealthScript : MonoBehaviour {
         StartCoroutine(BlinkBackground());
     }
 
+    // Changing immunity property after 5 seconds
     IEnumerator Wait5Seconds()
     {
         yield return new WaitForSecondsRealtime(5);
@@ -88,6 +91,7 @@ public class HealthScript : MonoBehaviour {
         ImmunityImg.color = Color.clear;
     }
 
+    // Blinking white background while hero is immune
     IEnumerator BlinkBackground()
     {
         bool isBackgroundDisplayed = false;
@@ -99,6 +103,7 @@ public class HealthScript : MonoBehaviour {
         }
     }
 
+    // Change the background color: immunity or none
     private void ChangeBackground(bool isBackgroundDisplayed)
     {
         if (isBackgroundDisplayed)
@@ -109,8 +114,6 @@ public class HealthScript : MonoBehaviour {
             ImmunityImg.color = Color.clear;
         }
     }
-
-
 
     void OnTriggerEnter2D (Collider2D otherCollider) {
         // Is this a shot?

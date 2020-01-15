@@ -22,6 +22,7 @@ public class PowerUpScript : MonoBehaviour {
                     // updating the Hero's HealthBar
                     Canvas.FindObjectOfType<Slider>().value = life.hp;
                     break;
+                // Immunity power-up
                 case "immunity":
                     HealthScript immunity = hero.gameObject.GetComponent<HealthScript>();
                     immunity.GetImmunity();

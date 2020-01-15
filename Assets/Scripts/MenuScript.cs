@@ -19,6 +19,8 @@ public class MenuScript : MonoBehaviour {
     {
         // "Stage1" is the name of the first scene we created.
         SceneManager.LoadScene("Stage1");
+        // Reset score:
+        ManageScore.score = 0;
     }
 
     public void Highscore()

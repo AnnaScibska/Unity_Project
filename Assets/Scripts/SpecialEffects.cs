@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class SpecialEffects : MonoBehaviour {
 
-    
     // Singleton
-    
     public static SpecialEffects Instance;
 
     public ParticleSystem smokeEffect;
@@ -17,32 +15,23 @@ public class SpecialEffects : MonoBehaviour {
         // Register the singleton
         if (Instance != null)
         {
-            // Debug.LogError("Multiple instances of SpecialEffects!");
+            Debug.LogError("Multiple instances of SpecialEffects!");
         }
 
         Instance = this;
     }
 
-    /// <summary>
-    /// Create an explosion at the given location
-    /// </summary>
-    /// <param name="position"></param>
+    // Create an explosion at the given location
     public void Explosion(Vector3 position)
     {
         // Smoke 
-        //Debug.LogError("Error!!!!");
-        //Debug.LogError(smokeEffect);
         Instantiate(smokeEffect, position);
 
         // Fire 
         Instantiate(fireEffect, position);
     }
 
-    /// <summary>
-    /// Instantiate a Particle system from prefab
-    /// </summary>
-    /// <param name="prefab"></param>
-    /// <returns></returns>
+    // Instantiate a Particle system from prefab
     private ParticleSystem Instantiate(ParticleSystem prefab, Vector3 position)
     {
         ParticleSystem newParticleSystem = Instantiate(

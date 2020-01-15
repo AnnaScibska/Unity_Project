@@ -12,7 +12,7 @@ public class ManageScore : MonoBehaviour {
     void Awake()
     {
         text = GetComponent<Text>();
-        score = 0;
+        DontDestroyOnLoad(transform.gameObject);
     }
 
     // updating score on the screen with every enemy killed

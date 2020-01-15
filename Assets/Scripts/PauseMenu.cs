@@ -65,7 +65,10 @@ public class PauseMenu : MonoBehaviour {
         Button[] buttons = PauseMenu.FindObjectsOfType<Button>();
         // turning ON "Resume button" in the menu after death of the hero
         buttons[1].interactable = true;
+        // hide game over 
         gameover.SetActive(false);
+        // Reset score:
+        ManageScore.score = 0;
     }
 
     // exit the game

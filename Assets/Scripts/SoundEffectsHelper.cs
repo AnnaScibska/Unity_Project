@@ -2,11 +2,12 @@
 using UnityEngine;
 
 /// <summary>
-/// Creating instance of sounds from code with no effort
+/// Creating instance of sounds
 /// </summary>
 public class SoundEffectsHelper : MonoBehaviour {
 
-	public static SoundEffectsHelper Instance;
+    //  sounds need to be triggered at the right time in the game and be called from everywhere
+    public static SoundEffectsHelper Instance;
 
 	public AudioClip explosionSound;
 	public AudioClip playerShotSound;
@@ -32,11 +33,12 @@ public class SoundEffectsHelper : MonoBehaviour {
 		MakeSound (enemyShotSound);
 	}
 
-	/// <summary>
-	/// Play a given sound
-	/// </summary>
-	/// <param name="originalClip"></param>
-	private void MakeSound (AudioClip originalClip) {
+    /// <summary>
+    /// Play a given sound
+    /// </summary>
+    /// <param name="originalClip"></param>
+    // playClipAtPipoint : This function creates an audio source but automatically disposes of it once the clip has finished playing.
+    private void MakeSound (AudioClip originalClip) {
 		AudioSource.PlayClipAtPoint (originalClip, new Vector2(50, 0));
 	}
 }

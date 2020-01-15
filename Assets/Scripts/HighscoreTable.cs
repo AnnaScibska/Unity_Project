@@ -15,9 +15,6 @@ public class HighscoreTable : MonoBehaviour {
 
         entryTemplate.gameObject.SetActive(false);
 
-        // Add new entry on highscore board
-        // AddHighscoreEntry(1000, "ANNA");
-
         // getting saved highscores
         string jsonString = PlayerPrefs.GetString("scoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
@@ -78,6 +75,7 @@ public class HighscoreTable : MonoBehaviour {
         // converting the rank name
         string rankString;
 
+        // changin rank name
         switch (rank)
         {
             case 1: rankString = "1ST"; break;
@@ -106,7 +104,7 @@ public class HighscoreTable : MonoBehaviour {
             entryTransform.Find("nameText").GetComponent<Text>().color = Color.green;
         }
 
-        // Set tropy (star)
+        // Set tropy (star) with color
         switch (rank)
         {
             default:
